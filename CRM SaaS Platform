@@ -1,0 +1,52 @@
+As a Data Engineer at a company that builds Customer Relationship Management (CRM) software.  Goal is to build a unified view that shows order details along with customer and product information — useful for internal dashboards and reporting.
+
+Given three datasets (or tables) that store customer, order, and product details.
+
+🎯 Task
+Write a function (or query) that:
+
+Joins the customer, order, and product data.
+
+Creates a new column customer_name by concatenating first_name and last_name with a space in between.
+
+Returns a new DataFrame (or result set) with the following reordered column layout:
+category, customer_name, email, order_date, order_id, product_name
+
+🧩 Input Data
+✅ For Python, PySpark, Scala: the DataFrames are named
+customers, orders, products
+
+✅ For SQL/dbt: the table names are
+crm_customers, crm_orders, crm_products
+
+🗃️ Schema Details
+📋 customers
+Column Name	Data Type
+customer_id	Integer
+first_name	String
+last_name	String
+email	String
+
+🧾 orders
+Column Name	Data Type
+order_id	Integer
+customer_id	Integer
+product_id	Integer
+order_date	Date
+
+📦 products
+Column Name	Data Type
+product_id	Integer
+product_name	String
+category	String
+
+✅ Expected Output Schema
+The output should contain:
+
+Column Name	Data Type
+category	String
+customer_name	String
+email	String
+order_date	Date
+order_id	Integer
+product_name	String
